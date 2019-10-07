@@ -101,10 +101,11 @@ a{
 	margin-left: 10px;
 }
 .content{
-	width: 1170px;
+	width: auto;
 	height: auto;
 	display: flex;
 	margin: 100px auto;
+	margin-left: 160px;
 	position: relative;
 }
 .content img{
@@ -177,3 +178,4 @@ a{
 .footer_bottom{
 	padding-top: 20px;
 }
+
