@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+
+		</style>
+	</head>
+
+	<body>
+		<div id="div"></div>
+		<input type="text" name="in1" id="in1" value="" />
+		<button id="btn1">已签到</button>
+		<button id="btn2">未签到</button>
+		<script>
+			var div = document.getElementById('div');
+			var in1 = document.getElementById('in1');
+			var btn1 = document.getElementById('btn1');
+			var btn2 = document.getElementById('btn2');
+			var n = 'aa,bb,cc,dd,ee,ff';
+			var b = [];
+			btn1.onclick = function() {
+				b.push(in1.value);
+				in1.value = "";
+				div.innerHTML = '已签到:'+b;
+			}
+			btn2.onclick = function() {
+				var reg = new RegExp(b.join('|'),"ig");
+				var val = n.replace(reg,"");
+				div.innerHTML = '未签到:' + val;
+			}
+		</script>
+	</body>
+
+</html>
