@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery.min.js"></script>
+		<style type="text/css">
+			li{
+				border-radius: 50%;
+				list-style: none;
+				cursor: pointer;
+				border: 2px solid white;
+				margin: 0 10px 0 0;
+			}
+			.lis li:nth-child(1){
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				background-color: aquamarine;
+				top: 70px;
+				left: 100px;
+			}
+			.lis li:nth-child(2){
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				background-color: antiquewhite;
+				top: 70px;
+				left: 100px;
+			}
+			.lis li:nth-child(3){
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				background-color: blueviolet;
+				top: 70px;
+				left: 100px;
+			}
+			.lis li:nth-child(4){
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				background-color: plum;
+				top: 70px;
+				left: 100px;
+			}
+			.lis li:nth-child(5){
+				width: 200px;
+				height: 200px;
+				background-color: royalblue;
+				position: relative;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="lis">
+			<li id="active"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<script type="text/javascript">
+			$(".lis li:nth-child(5)").click(function(){
+				$(".lis li:nth-child(1)").css({"margin-left":"200px","transition":"2s"});
+				$(".lis li:nth-child(2)").css({"margin-left":"350px","transition":"2s"});
+				$(".lis li:nth-child(3)").css({"margin-left":"500px","transition":"2s"});
+				$(".lis li:nth-child(4)").css({"margin-left":"650px","transition":"2s"});
+			})
+			$(".lis li:nth-child(1)").click(function(){
+				$("body,.lis li:nth-child(5)").css({"background-color":"aquamarine"})
+		    })
+			$(".lis li:nth-child(2)").click(function(){
+				$("body,.lis li:nth-child(5)").css({"background-color":"antiquewhite"})
+		    })
+			$(".lis li:nth-child(3)").click(function(){
+				$("body,.lis li:nth-child(5)").css({"background-color":"blueviolet"})
+		    })
+			$(".lis li:nth-child(4)").click(function(){
+				$("body,.lis li:nth-child(5)").css({"background-color":"plum"})
+		    })
+		</script>
+	</body>
+</html>
