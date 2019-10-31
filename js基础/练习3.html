@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+    	
+    </style>
+</head>
+<body>
+	<!--<table border="" cellspacing="" cellpadding="">
+		<tr><th>Header</th></tr>
+		<tr><td>Data</td></tr>
+	</table>-->
+    <table cellspacing="15px"  cellpadding="15px">
+        <tr>
+            <td>华为</td>
+            <td>
+                <button id="j">+</button><!--加-->
+                <span id="sl">0</span><!--数量-->
+                <button id="g">-</button><!--减-->
+            </td>
+            <td><span id="js">1000</span></td><!--加算-->
+            <td><span id="zh">0</span></td><!--总和-->
+        </tr>
+        <tr>
+            <td>小米</td>
+            <td>
+                <button id="J">+</button>
+                <span id="SL">0</span>
+                <button id="G">-</button>
+            </td>
+            <td><span id="JS">2000</span></td>
+            <td><span id="ZH">0</span></td>
+        </tr>
+        <tr>
+            <td>总数</td>
+            <td><span id="S">0</span></td><!--数量总和-->
+            <td>总价</td>
+            <td><span id="Q">0</span></td><!--钱数总和-->
+        </tr>
+    </table>
+    <script>
+    	
+        $('#j').click(function () {
+        	//数量加1
+            $('#sl').html(parseInt($('#sl').html()) + 1);
+            //1000+点击数量钱数
+            $('#zh').html((parseInt($('#js').html())) * (parseInt($('#sl').html())));
+            var a = 0;
+            //钱数总和
+            $('#zh').each(function () {
+                a += (parseInt($(this).html()) + parseInt($('#ZH').html()));
+                $('#Q').html(a);
+            });
+            //数量总和
+            $('#S').html(Number($('#sl').html()) + Number($('#SL').html()));
+        })
+        
+        
+         $('#J').click(function(){
+         	//数量加1
+            $('#SL').html(parseInt($('#SL').html()) + 1);
+            //2000+点击数量钱数
+            $('#ZH').html((parseInt($('#JS').html())) * (parseInt($('#SL').html())));
+            var a = 0;
+            //钱数总和
+            $('#ZH').each(function () {
+                a += (parseInt($(this).html()) + parseInt($('#zh').html()));
+                $('#Q').html(a);
+            });
+            //数量总和
+            $('#S').html(Number($('#sl').html()) + Number($('#SL').html()));
+        })
+        
+        
+        $('#g').click(function () {
+         	//数量减1
+            var hn = parseInt($('#sl').html()) - 1;
+            //设置数量不能低于-1，否则返回
+            if (hn == -1) {
+                return;
+            }
+            $('#sl').html(hn);
+            $('#zh').html(hn * parseInt($('#js').html()));
+            var a = 0;
+            $('#zh').each(function () {
+                var h = (parseInt($(this).html()) + parseInt($('#ZH').html()));
+                a += h;
+                $('#Q').html(a);
+            });
+            $('#S').html(Number($('#sl').html()) + Number($('#SL').html()));
+        })
+        
+      
+        
+        $('#G').click(function () {
+         	//数量减1
+            var xn = parseInt($('#SL').html()) - 1;
+            //设置数量不能低于-1，否则返回
+            if (xn == -1) {
+                return;
+            }
+            $('#SL').html(xn);
+            $('#ZH').html(xn * parseInt($('#JS').html()));
+            var a = 0;
+            $('#ZH').each(function () {
+                var h = (parseInt($(this).html()) + parseInt($('#zh').html()));
+                a += h;
+                $('#Q').html(a);
+            });
+            $('#S').html(Number($('#sl').html()) + Number($('#SL').html()));
+        })
+    </script>
+</body>
+
+</html>
